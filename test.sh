@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 04:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 20:19:37 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/26 20:20:35 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,9 +90,6 @@ BHBLU="\e[1;94m"
 BHMAG="\e[1;95m"
 BHCYN="\e[1;96m"
 BHWHT="\e[1;97m"
-
-#Reset
-reset="\e[0m"
 
 #CLEAR INITIAL TERMINAL WINDOW
 clear

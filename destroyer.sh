@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    test.sh                                            :+:    :+:             #
+#    destroyer.sh                                       :+:    :+:             #
 #                                                      +:+                     #
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 04:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 20:15:25 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/26 20:22:17 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,9 +91,6 @@ BHMAG="\e[1;95m"
 BHCYN="\e[1;96m"
 BHWHT="\e[1;97m"
 
-#Reset
-reset="\e[0m"
-
 #CLEAR INITIAL TERMINAL WINDOW
 clear
 
@@ -103,16 +100,6 @@ div2="====================="
 div3="\t\t"
 
 #WELCOME SCREEN + INSTRUCTIONS
-# printf "\n${BLUEBG}${WHITE}\t\t ++++++CUB3D DESTROYER++++++ ${RESET}\n"
-# printf "${BLUEBG}${WHITE}\t\t+++LET'S BREAK YOUR PARSER+++${RESET}\n"
-# printf "${WHITE}\t\t\tby dkrecisz${RESET}\n\n"
-# printf "${BLUEBG}${WHITE}   Some mandatory rules to make the test running:${RESET}${RESET}\n"
-# printf "${BLUEBG}${WHITE}1.${RESET}${GREEN} Compile your \"cub3D\" executable [yep, with a capital D] in the parent directory!${RESET}\n"
-# printf "${BLUEBG}${WHITE}2.${RESET}${GREEN} Your code should print ""Error\\n"" to stdout after encountering an error!${RESET}\n"
-# printf "${BLUEBG}${WHITE}3.${RESET}${GREEN} Many cub3D related rules leave room for interpretation. So be always open for discussion!${RESET}\n\n"
-
-# printf "\n${WHT}%s=================${WHT}%s" $div1 $div1
-# printf "\n${WHT}%s${BWHT}+CUB3D DESTROYER+${WHT}%s" $div1 $div1
 printf "\n\t${BYEL}+====================================+"
 printf "\n\t${BYEL}+------------------------------------+"
 printf "\n\t${BYEL}+---------${REDB} ${BHWHT}CUB3D DESTROYER ${RESET}${BYEL}----------+"
@@ -128,7 +115,7 @@ FAIL=0
 OK=0
 
 #LOGFILE FOR PARSER DESTROYED STUFF
-log=destroyed_stuff.log
+log=damage_report.log
 errorMsg=error.txt
 date > $log && printf "\n\n%sCUB3D DESTROYER - DAMAGE REPORT%s\n\n" $div2 $div2 >> $log && echo >> $log
 
