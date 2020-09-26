@@ -1,11 +1,11 @@
-R 1080 720
-NO ./.png/pillar pngpngxpmpng.png
-SO ./wolftex/redbrick.png
+R 1080 720 
+SO ./wolftex/redbrick.png	
 EA ./wolftex/wood.png
+NO ./wolftex/greystone.png		 
 WE ./wolftex/wood.png
-S ./wolftex/barrel.png
-C 255,200,160
-F 122,122,122
+S ./wolftex/barrel.png	 	
+C 255,200,160	 
+F 122,122,122	 
 
 11111111111111111
 10000000000000001

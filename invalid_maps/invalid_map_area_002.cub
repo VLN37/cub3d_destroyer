@@ -1,8 +1,8 @@
 R 1080 720
-NO ./.xpm/pillar xpmpngxpmxpm.xpm
-SO ./.xpm/pillar xpmpngxpmxpm.xpm
-EA ./.xpm/pillar xpmpngxpmxpm.xpm
-WE ./.xpm/pillar xpmpngxpmxpm.xpm
+NO ./wolftex/greystone.png
+SO ./wolftex/redbrick.png
+EA ./wolftex/wood.png
+WE ./wolftex/wood.png
 S ./wolftex/barrel.png
 C 255,200,160
 F 122,122,122
@@ -19,4 +19,4 @@ F 122,122,122
 10000000000000001
 10200000200002001
 10000000000000001
-11111111111111111
+11111111111111110

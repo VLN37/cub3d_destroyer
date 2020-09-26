@@ -1,8 +1,8 @@
-R 1080 720
-NO ./.xpm/pillar png.png
+R 100 720
+WE ./wolftex/greystonepng
 SO ./wolftex/redbrick.png
 EA ./wolftex/wood.png
-WE ./wolftex/wood.png
+NO ./wolftex/wood.png
 S ./wolftex/barrel.png
 C 255,200,160
 F 122,122,122
