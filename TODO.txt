@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/26 08:12:59 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 20:17:40 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/26 20:23:07 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ TODO:
 	- CREATE MAKEFILE
 		- RULES FOR TEST ONLY RGB/MAP/etc
 	- TEST FOR WHITESPACE IN TEXTURE PATH
+	- CHANGE SOME SILLY MAP NAMES
 
 IN PROGRESS:
 	- TEST EXECUTABLE NAME "cub3D"
