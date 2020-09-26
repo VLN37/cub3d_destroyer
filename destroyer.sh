@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 04:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/27 00:11:49 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/27 00:50:17 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ printf "\n\t${BYEL}+------------------------------------+"
 printf "\n\t${BYEL}+====================================+\n${RESET}"
 
 #Try to make cub3D
-make -C ../
+make -C ../ 
 if [[ $? -ne 0 ]]; then
 	printf "\n${BYEL}${REDB} ${BHWHT} Error: Failed to make cub3D in parent directory! ${RESET}${BYEL}\n${RESET}"
 	exit 1
@@ -99,7 +99,7 @@ do
 done
 
 #TEST VALID MAPS
-for file in valid_maps/valid_tex_*.cub
+for file in valid_maps/valid_*.cub
 do
 	../cub3D $file &>$errorMsg &
 	sleep 0.06
