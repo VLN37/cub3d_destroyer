@@ -1,20 +1,20 @@
-## cub3d_destroyer - Let's Break Your Parser!
+# cub3d_destroyer - Let's Break Your Parser!
 
 cub3d_destroyer tries to break your cub3d parser with over 200 different .cub files.
 Get ready... only the best ones will survive!
 
-# Disclaimer
+## Disclaimer
 The 42 subject lays out a big set of rules for what should be considered as valid/invalid input.
 Some of these rules offer a great scope for interpretation.
 While testing, I strongly advise you to take a close look on the .cub files and to be always open for discussion.
 
 
-# Requirements to make this test run
+## Requirements to make this test run
 - Your executable should be named "cub3D". With a capital "D" just like it is stated in the subject.
 - Your program/parser has to print out "Error\n" after encountering a misconfiguration in the .cub file.
 
 
-# Step-by-Step Guide
+## Step-by-Step Guide
 1. Use this command to clone the repository to the root directory of your cub3d project.
 ```
 git clone https://github.com/Dustin42Codam/cub3d_destroyer.git
@@ -35,4 +35,4 @@ bash destroyer.sh
 
 
 ### Output in the logfile
-![cub3d_destroyer_logfile](https://user-images.githubusercontent.com/57137884/94350779-053af400-0052-11eb-97bc-b1675d0ac6ca.png)
+![cub3d_destroyer_logfile](https://user-images.githubusercontent.com/57137884/94351607-f278ed00-005a-11eb-9e34-2d11faef3b47.png)
