@@ -1,6 +1,6 @@
 # cub3d_destroyer - Let's Break Your Parser!
 
-cub3d_destroyer tries to break your cub3d parser with over 200 different .cub files.
+cub3d_destroyer tries to break your cub3d parser with almost 300 different .cub files.
 Get ready... only the best ones will survive!
 
 ## Disclaimer
