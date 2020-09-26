@@ -2,7 +2,7 @@ R 1080 720
 NO ./wolftex/greystone.png
 SO ./wolftex/redbrick.png
 EA ./wolftex/wood.png
-WE ./wolftex/hitler.xpm
+WE ./wolftex/fuhrer.xpm
 S ./wolftex/barrel.png
 C 255,200,160
 F 122,122,122

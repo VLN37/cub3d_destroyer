@@ -1,8 +1,8 @@
 R 1080 720
-NO ./wolftex/hitler.xpm
-SO ./wolftex/hitler.xpm
-EA ./wolftex/hitler.xpm
-WE ./wolftex/hitler.xpm
+NO ./wolftex/fuhrer.xpm
+SO ./wolftex/fuhrer.xpm
+EA ./wolftex/fuhrer.xpm
+WE ./wolftex/fuhrer.xpm
 S ./wolftex/barrel.png
 C 255,200,160
 F 122,122,122

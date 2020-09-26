@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/26 08:12:59 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 20:23:07 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/26 22:12:38 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,4 @@ DONE:
 	- AUTOMATED TEST INVALID MAPS
 	- AUTOMATED TEST VALID MAPS
 	- CREATE LOGFILE
+	- GREP "ERROR\n" FROM PARSER OUTPUT

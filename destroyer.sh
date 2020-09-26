@@ -6,98 +6,39 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 04:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 20:22:17 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/26 22:13:26 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
 
-# COLORS USED FOR PRINTING
-CYAN="\033[0;36m"
-PURP="\033[0;35m"
-GREEN="\033[1;32m"
-BLUE="\033[0;34m"
-BLUEBG="\033[44m"
-WHITE="\033[1;97m"
-RESET="\033[0m"
-
-#Regular text
-BLK="\e[0;30m"
-RED="\e[0;31m"
-GRN="\e[0;32m"
-YEL="\e[0;33m"
-BLU="\e[0;34m"
-MAG="\e[0;35m"
-CYN="\e[0;36m"
-WHT="\e[0;37m"
-
 #Regular bold text
-BBLK="\e[1;30m"
 BRED="\e[1;31m"
 BGRN="\e[1;32m"
 BYEL="\e[1;33m"
 BBLU="\e[1;34m"
-BMAG="\e[1;35m"
-BCYN="\e[1;36m"
 BWHT="\e[1;37m"
 
-#Regular underline text
-UBLK="\e[4;30m"
-URED="\e[4;31m"
-UGRN="\e[4;32m"
-UYEL="\e[4;33m"
-UBLU="\e[4;34m"
-UMAG="\e[4;35m"
-UCYN="\e[4;36m"
-UWHT="\e[4;37m"
-
 #Regular background
-BLKB="\e[40m"
 REDB="\e[41m"
-GRNB="\e[42m"
-YELB="\e[43m"
-BLUB="\e[44m"
-MAGB="\e[45m"
-CYNB="\e[46m"
-WHTB="\e[47m"
-
-#High intensty background 
-BLKHB="\e[0;100m"
-REDHB="\e[0;101m"
-GRNHB="\e[0;102m"
-YELHB="\e[0;103m"
-BLUHB="\e[0;104m"
-MAGHB="\e[0;105m"
-CYNHB="\e[0;106m"
-WHTHB="\e[0;107m"
 
 #High intensty text
-HBLK="\e[0;90m"
 HRED="\e[0;91m"
-HGRN="\e[0;92m"
 HYEL="\e[0;93m"
-HBLU="\e[0;94m"
-HMAG="\e[0;95m"
-HCYN="\e[0;96m"
 HWHT="\e[0;97m"
 
 #Bold high intensity text
-BHBLK="\e[1;90m"
-BHRED="\e[1;91m"
-BHGRN="\e[1;92m"
 BHYEL="\e[1;93m"
-BHBLU="\e[1;94m"
-BHMAG="\e[1;95m"
-BHCYN="\e[1;96m"
 BHWHT="\e[1;97m"
+
+RESET="\033[0m"
 
 #CLEAR INITIAL TERMINAL WINDOW
 clear
 
-#PRINTING STUFF
+#PRINTING STUFF lol
 div1="=========================="
 div2="====================="
-div3="\t\t"
 
 #WELCOME SCREEN + INSTRUCTIONS
 printf "\n\t${BYEL}+====================================+"
@@ -136,7 +77,7 @@ do
 		echo
 	else
 		OK=$((OK+1))
-		printf "${REDB}${BHYEL}MAP:${RESET}${BWHT} %-42s${RESET}%s${GREEN}[OK]\n" $file " "
+		printf "${REDB}${BHYEL}MAP:${RESET}${BWHT} %-42s${RESET}%s${BGRN}[OK]\n" $file " "
 	fi
 done
 
@@ -146,7 +87,8 @@ do
 	../cub3D $file &>$errorMsg &
 	sleep 0.05
 	killall cub3D &>/dev/null
-	if [[ $? -eq 0 ]]; then
+	grep -q "Error$" $errorMsg
+	if [[ $? -ne 0 ]]; then
 		FAIL=$((FAIL+1))
 		printf "${REDB}${BHYEL}MAP: %-42s${RESET}%s${BRED}[DESTROYED]\n" $file " " && printf ${RESET}
 		printf "%s[DESTROYED STUFF #%2.d]%s\n" $div1 $FAIL $div1 >> $log && ls $file >> $log && cat $file >> $log && printf "\n\n" >> $log
@@ -155,12 +97,14 @@ do
 		echo
 	else
 		OK=$((OK+1))
-		printf "${REDB}${BHYEL}MAP:${RESET}${BWHT} %-42s${RESET}%s${GREEN}[OK]\n" $file " "
+		printf "${REDB}${BHYEL}MAP:${RESET}${BWHT} %-42s${RESET}%s${BGRN}[OK]\n" $file " "
 	fi
 done
 
+rm $errorMsg
+
 #OUTPUT FINAL RESULT
-printf "\n${WHT}%s${BWHT}FINAL RESULT${WHT}%s\n" $div1 $div1
-printf "${BGRN}Bulletproof, nice and smooth:\t%d\t[GREAT JOB MATE]\n" $OK
-printf "${BRED}Cases of pure destruction:\t%d \t[RIP IN PIECES]\n" $FAIL
-printf "${WHT}%s============%s\n" $div1 $div1
+printf "\n\n${BBLU}%s${BWHT}FINAL RESULT${BBLU}%s\n\n" $div1 $div1
+printf "${BGRN}PASSED AND BULLETPROOF:\t%d\t[GREAT JOB MATE]\n" $OK
+printf "${BRED}FAILED AND DESTROYED:\t%d \t[RIP]\n\n" $FAIL
+printf "${BBLU}=========== ${BWHT}FOR MORE INFO: LOOK AT DAMAGE_REPORT.LOG ${BBLU}===========${RESET}\n\n"
