@@ -1,7 +1,0 @@
-[1;34mChecking file content...
-[0m[1;32mResolution:	 [SUCCESS][0m
-[1;32mTextures:	 [SUCCESS][0m
-[1;32mRGB colors:	 [SUCCESS][0m
-[1;31mError
-[0mTexture 'WE' is specified more than once!
-[1;31mExiting program![0m
