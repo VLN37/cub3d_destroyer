@@ -6,30 +6,30 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/26 08:12:59 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/26 22:12:38 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/27 00:11:19 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 TODO:
-	- TEST --SAVE ARGUMENT
-	- TEST SCREENSHOT SIZE
-	- TEST MEMLEAKS
-	- TEST MEMPEAK?
-	- TEST .CUB EXTENSION INPUT
-	- CHECK EVAL SHEET FOR MORE TESTS
-	- CREATE README FILE
-	- REWRITE INSTRUCTIONS
-	- COPY DYLIB FROM ROOT CUB3D FOLDER
-	- CREATE MAKEFILE
-		- RULES FOR TEST ONLY RGB/MAP/etc
-	- TEST FOR WHITESPACE IN TEXTURE PATH
-	- CHANGE SOME SILLY MAP NAMES
+	- Add ests for "--save" argument
+	- Add tests for screenshot making 
+	- Add test for memleaks
+	- Add test for mempeaks
+	- Add test for ".cub" extension recognition
+	- Create Makefile
+		- Rules for seperate tests (rgb/textures/etc)
+		- Var for cub3d dir
+	- Add tests for spaces in filepaths
 
 IN PROGRESS:
-	- TEST EXECUTABLE NAME "cub3D"
+	- Test if correct executable is in parent directory
+	- Check eval sheet for more ideas for tests
+	- Copy dylib from cub3d dir
 
 DONE:
-	- AUTOMATED TEST INVALID MAPS
-	- AUTOMATED TEST VALID MAPS
-	- CREATE LOGFILE
-	- GREP "ERROR\n" FROM PARSER OUTPUT
+	- Call to make cub3d from inside the script
+	- Loop tests for invalid maps
+	- Loop tests for valid maps
+	- Create logfile
+	- grep "Error\n" to evaluate parsing result 
+	- Create readme file
