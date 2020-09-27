@@ -17,7 +17,7 @@ While testing, I strongly advise you to take a close look on the .cub files, rea
 
 
 ##	Step-by-Step Guide
-1.	Use this command to clone the repository to the root directory of your cub3d project.
+1.	Go to the root of your cub3d directory and execute this command to clone the repo.
 ```
 git clone https://github.com/Dustin42Codam/cub3d_destroyer.git
 ```
