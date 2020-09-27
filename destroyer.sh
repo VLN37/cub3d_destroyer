@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 06:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/09/27 07:00:09 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/09/27 07:20:29 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,8 @@ do
 	../cub3D $file &>$out &
 	sleep 0.02
 	while [ ! -f $out ]; do sleep 0.001; done
-	killall -q cub3D
+	kill $! &>/dev/null
+	wait $! 2>/dev/null
 	grep -q "Error$" $out
 	if [[ $? -ne 0 ]]; then
 		FAIL=$((FAIL+1))
@@ -111,7 +112,7 @@ do
 	../cub3D $file &>$out &
 	sleep 0.02
 	while [ ! -f $out ]; do sleep 0.001; done
-	kill $!
+	kill $! &>/dev/null
 	wait $! 2>/dev/null
 	grep -q "Error$" $out
 	if [[ $? -eq 0 ]]; then
