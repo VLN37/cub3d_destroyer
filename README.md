@@ -36,7 +36,7 @@ cd cub3d_destroyer && bash destroyer.sh
 # Screenshots
 
 ### Output in the terminal
-![cub3d_destroyer_output](https://user-images.githubusercontent.com/57137884/94356479-7351dc00-008f-11eb-8997-9e196d100d40.png)
+![cub3d_destroyer_output](https://user-images.githubusercontent.com/57137884/94357004-54564880-0095-11eb-9103-0ff36f5e74b7.png)
 
 
 ### Output in the logfile
