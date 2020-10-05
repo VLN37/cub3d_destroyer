@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 06:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/10/05 21:48:49 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/10/05 21:52:30 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ do
 	[ -s tmp.txt ]
 	RET=$?
 	grep -q "Error$" $out
-	if [[ $? -ne 0 ]]; then
+	if [[ $? -ne 0 || $RET -ne 0 ]]; then
 		FAIL=$((FAIL+1))
 		printf "${REDB}${BHYEL}MAP: %-42s${RESET}%s${BRED}[DESTROYED]\n" $file " " && printf ${RESET}
 		printf "${REDB}${BWHT}%s${REDB}${BHYEL} FILE CONTENTS ${REDB}${BWHT}%s${RESET}\n" $div1 $div1
