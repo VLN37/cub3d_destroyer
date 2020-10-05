@@ -6,7 +6,7 @@
 #    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/06 06:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/10/05 21:52:30 by dkrecisz      ########   odam.nl          #
+#    Updated: 2020/10/05 23:03:12 by dkrecisz      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,10 +85,11 @@ do
 	while [ ! -f $out ]; do sleep 0.001; done
 	kill $! &>/dev/null
 	wait $! 2>/dev/null
-	[ -s tmp.txt ]
 	RET=$?
+	[ -s tmp.txt ]
+	FILECHECK=$?
 	grep -q "Error$" $out
-	if [[ $? -ne 0 || $RET -ne 0 ]]; then
+	if [[ $? -ne 0 || $FILECHECK -ne 0 || $RET -eq 139 ]]; then
 		FAIL=$((FAIL+1))
 		printf "${REDB}${BHYEL}MAP: %-42s${RESET}%s${BRED}[DESTROYED]\n" $file " " && printf ${RESET}
 		printf "${REDB}${BWHT}%s${REDB}${BHYEL} FILE CONTENTS ${REDB}${BWHT}%s${RESET}\n" $div1 $div1
@@ -97,9 +98,13 @@ do
 		cat $out >> $log
 		cat $file
 		printf "\n${BYEL}%s${REDB}${BHYEL} PARSER OUTPUT ${RESET}${BYEL}%s${RESET}\n" $div1 $div1
-		if [[ $RET -ne 0 ]]; then
-			echo "[No parser output] Segfault maybe?"
-			echo "[No parser output] Segfault maybe?" >> $log
+		if [[ $FILECHECK -ne 0 ]]; then
+			echo "[No parser output]"
+			echo "[No parser output]" >> $log
+		fi
+		if [[ $RET -eq 139 ]]; then
+			echo "[139] Segmentation fault"
+			echo "[139] Segmentation fault" >> $log
 		fi
 		cat $out
 		printf "${REDB}${BWHT}%s${YELHB}${BRED} CONTINUE TEST ${REDB}${BWHT}%s${RESET}\n" $div1 $div1
@@ -119,10 +124,9 @@ do
 	while [ ! -f $out ]; do sleep 0.001; done
 	kill $! &>/dev/null
 	wait $! &>/dev/null
-	[ -s tmp.txt ]
 	RET=$?
 	grep -q "Error$" $out
-	if [[ $? -eq 0 || $RET -ne 0 ]]; then
+	if [[ $? -eq 0 || $RET -eq 139 ]]; then
 		FAIL=$((FAIL+1))
 		printf "${REDB}${BHYEL}MAP: %-42s${RESET}%s${BRED}[DESTROYED]\n" $file " " && printf ${RESET}
 		printf "${REDB}${BWHT}%s${REDB}${BHYEL} FILE CONTENTS ${REDB}${BWHT}%s${RESET}\n" $div1 $div1
@@ -131,9 +135,9 @@ do
 		cat $out >> $log
 		cat $file
 		printf "\n${BYEL}%s${REDB}${BHYEL} PARSER OUTPUT ${RESET}${BYEL}%s${RESET}\n" $div1 $div1
-		if [[ $RET -ne 0 ]]; then
-			echo "[No parser output] Segfault maybe?"
-			echo "[No parser output] Segfault maybe?" >> $log
+		if [[ $RET -eq 139 ]]; then
+			echo "[139] Segmentation fault"
+			echo "[139] Segmentation fault" >> $log
 		fi
 		cat $out
 		printf "${REDB}${BWHT}%s${YELHB}${BRED} CONTINUE TEST ${REDB}${BWHT}%s${RESET}\n" $div1 $div1
