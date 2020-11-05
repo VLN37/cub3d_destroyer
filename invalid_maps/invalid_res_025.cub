@@ -1,4 +1,4 @@
-R 4294967900 720
+R 10s0 4294967900
 NO ./wolftex/greystone.png
 SO ./wolftex/redbrick.png
 EA ./wolftex/wood.png
