@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    destroyer.sh                                       :+:    :+:             #
-#                                                      +:+                     #
-#    By: dkrecisz <dkrecisz@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2020/07/06 06:44:53 by dkrecisz      #+#    #+#                  #
-#    Updated: 2020/11/05 14:04:27 by dkrecisz      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    destroyer.sh                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/06 06:44:53 by dkrecisz          #+#    #+#              #
+#    Updated: 2022/02/02 00:29:05 by jofelipe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ HRED="\e[0;91m"
 HYEL="\e[0;93m"
 HWHT="\e[0;97m"
 
-#High intensty background 
+#High intensty background
 YELHB="\e[0;103m"
 
 #Bold high intensity text
@@ -91,7 +91,7 @@ printf "\n${BYEL}+%.19s${REDB} ${BHWHT}TEST INVALID MAPS ${RESET}${BYEL}%.19s+\n
 for file in ./invalid_maps/*.cub
 do
 	../cub3D $file &>$out &
-	sleep 0.5
+	sleep 0.8
 	kill $! &>/dev/null
 	wait $! &>/dev/null
 	RET=$?
@@ -157,44 +157,6 @@ do
 	fi
 	rm -f $out
 done
-
-
-#TEST "--save"
-if [ $OK -gt 0 ]; then
-	printf "\n${BYEL}+%.18s${REDB} ${BHWHT}TEST \"--SAVE\" ARGUMENT ${RESET}${BYEL}%.18s+\n${RESET}" $div1 $div1
-	INPUT="argument_list.txt"
-	while IFS= read -r line
-	do
-		../cub3D valid_maps/valid_res_000.cub "$line" &>$out &
-		sleep 0.3
-		kill $! &>/dev/null
-		wait $! &>/dev/null
-		RET=$?
-		grep -q "Error$" $out
-		if [[ $? -ne 0 ]]; then
-			FAIL=$((FAIL+1))
-			#TERMINAL OUTPUT
-			printf "${REDB}${BHYEL}CMD:${RESET}${BHYEL} %-53s${BRED}[DESTROYED]\n${RESET}" "../cub3D $ARG_TEST_MAP \"$line\""
-			printf "${BYEL}%.21s${REDB}${BHYEL} PARSER OUTPUT ${RESET}${BYEL}%.21s${RESET}\n" $div1 $div1
-			cat $out
-			if [[ $RET -eq 139 ]]; then
-				echo "[139] Segmentation fault"
-				echo "[139] Segmentation fault" >> $log
-			fi
-			# #LOGFILE OUTPUT
-			printf "\n\n%.21s[DESTROYED STUFF #%2.d]%.21s\n" $div1 $FAIL $div1 >> $log
-			printf "\n../cub3D $ARG_TEST_MAP \"$line\"" >> $log
-			printf "\n\nPARSER OUTPUT:\n" >> $log
-			cat $out >> $log
-			echo
-		else
-			OK=$((OK+1))
-			printf "${REDB}${BHYEL}CMD:${RESET} ${BWHT}%-53s${BWHT}${BGRN}[OK]\n" "../cub3D $ARG_TEST_MAP \"$line\""
-		fi
-		rm -f $out
-	done < "$INPUT"
-fi
-
 
 #OUTPUT FINAL RESULT
 printf "\n\n${BBLU}%.21s${BWHT} FINAL RESULT ${BBLU}%.21s\n\n" $div1 $div1

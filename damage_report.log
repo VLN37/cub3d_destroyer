@@ -1,0 +1,34 @@
+Wed Feb  2 01:46:52 -03 2022
+
+
+=============== CUB3D DESTROYER - DAMAGE REPORT ===============
+
+[139] Segmentation fault
+
+
+=====================[DESTROYED STUFF # 1]=====================
+./invalid_maps/invalid_RGB_018.cub
+NO ./.xpm/no_redbrick.xpm
+SO ./.xpm/so_redbrick.xpm
+EA ./.xpm/ea_redbrick.xpm
+WE ./.xpm/we_redbrick.xpm
+C 255,200,160,
+F 122,122,122
+
+11111111111111111
+10000000000000001
+10000000000000001
+10000000000000001
+10000000000000001
+10000000000000001
+10000000N00000001
+10000000000000001
+10000000000000001
+10000000000000001
+10000000000000001
+10000000000000001
+11111111111111111
+
+
+PARSER OUTPUT:
+Xlib:  extension "MIT-SHM" missing on display "172.19.240.1:0.0".

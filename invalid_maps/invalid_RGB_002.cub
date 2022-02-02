@@ -1,9 +1,7 @@
-R 1080 720
-NO ./wolftex/greystone.png
-SO ./wolftex/redbrick.png
-EA ./wolftex/wood.png
-WE ./wolftex/wood.png
-S ./wolftex/barrel.png
+NO ./.xpm/no_redbrick.xpm
+SO ./.xpm/so_redbrick.xpm
+EA ./.xpm/ea_redbrick.xpm
+WE ./.xpm/we_redbrick.xpm
 C
 F 122,122,122
 

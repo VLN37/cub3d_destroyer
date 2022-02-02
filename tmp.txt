@@ -1,0 +1,1 @@
+Xlib:  extension "MIT-SHM" missing on display "172.19.240.1:0.0".
