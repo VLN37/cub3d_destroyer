@@ -1,8 +1,7 @@
-
-NO ../assets/images/no_redbrick.xpm
-SO ../assets/images/so_redbrick.xpm
-EA ../assets/images/ea_redbrick.xpm
-WE ../assets/images/we_redbrick.xpm
+NO ./.xpm/no_redbrick.xpm
+SO ./.xpm/so_redbrick.xpm
+EA ./.xpm/ea_redbrick.xpm
+WE ./.xpm/we_redbrick.xpm
 C 0,0,0
 F 255,255,255
 

@@ -1,9 +1,9 @@
 F 122,122,122
 C 255,200,160
-NO ../assets/images/no_redbrick.xpm
-SO ../assets/images/so_redbrick.xpm
-EA ../assets/images/ea_redbrick.xpm
-WE ../assets/images/we_redbrick.xpm
+NO ./.xpm/no_redbrick.xpm
+SO ./.xpm/so_redbrick.xpm
+EA ./.xpm/ea_redbrick.xpm
+WE ./.xpm/we_redbrick.xpm
 
 11111111111111111
 10000000000000001
