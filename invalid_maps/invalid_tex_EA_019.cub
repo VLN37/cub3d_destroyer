@@ -1,6 +1,6 @@
 EA ./.xpm/so_redbrick.xpm
 NO ./.xpm/no_redbrick.xpm
-SO ./.xpm/so_redbrick.xpm
+SO ./.xpm/       so_redbrick.xpm
 WE ./.xpm/we_redbrick.xpm
 C 255,200,160
 F 122,122,122
